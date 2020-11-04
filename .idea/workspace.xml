@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2fb6fe48-49a1-4b51-9f06-67d5344c73c1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1jpYUn2A8Q2lHTZTFqkeqvbrhZh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/bindings" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2fb6fe48-49a1-4b51-9f06-67d5344c73c1" name="Default Changelist" comment="" />
+      <created>1604502518299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604502518299</updated>
+      <workItem from="1604502520062" duration="7985000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1241" height="245" key="GridCell.Tab.0.bottom" timestamp="1604512750143">
+      <screen x="0" y="23" width="1680" height="938" />
+    </state>
+    <state width="1241" height="245" key="GridCell.Tab.0.bottom/0.23.1680.938@0.23.1680.938" timestamp="1604512750143" />
+    <state width="1523" height="417" key="GridCell.Tab.0.bottom/0.23.1680.941@0.23.1680.941" timestamp="1604505234049" />
+    <state width="1241" height="224" key="GridCell.Tab.0.bottom/0.23.1680.944@0.23.1680.944" timestamp="1604507906885" />
+    <state width="1241" height="245" key="GridCell.Tab.0.center" timestamp="1604512750142">
+      <screen x="0" y="23" width="1680" height="938" />
+    </state>
+    <state width="1241" height="245" key="GridCell.Tab.0.center/0.23.1680.938@0.23.1680.938" timestamp="1604512750142" />
+    <state width="1523" height="417" key="GridCell.Tab.0.center/0.23.1680.941@0.23.1680.941" timestamp="1604505234048" />
+    <state width="1241" height="224" key="GridCell.Tab.0.center/0.23.1680.944@0.23.1680.944" timestamp="1604507906884" />
+    <state width="1241" height="245" key="GridCell.Tab.0.left" timestamp="1604512750142">
+      <screen x="0" y="23" width="1680" height="938" />
+    </state>
+    <state width="1241" height="245" key="GridCell.Tab.0.left/0.23.1680.938@0.23.1680.938" timestamp="1604512750142" />
+    <state width="1523" height="417" key="GridCell.Tab.0.left/0.23.1680.941@0.23.1680.941" timestamp="1604505234047" />
+    <state width="1241" height="224" key="GridCell.Tab.0.left/0.23.1680.944@0.23.1680.944" timestamp="1604507906884" />
+    <state width="1241" height="245" key="GridCell.Tab.0.right" timestamp="1604512750142">
+      <screen x="0" y="23" width="1680" height="938" />
+    </state>
+    <state width="1241" height="245" key="GridCell.Tab.0.right/0.23.1680.938@0.23.1680.938" timestamp="1604512750142" />
+    <state width="1523" height="417" key="GridCell.Tab.0.right/0.23.1680.941@0.23.1680.941" timestamp="1604505234048" />
+    <state width="1241" height="224" key="GridCell.Tab.0.right/0.23.1680.944@0.23.1680.944" timestamp="1604507906885" />
+    <state x="854" y="287" width="604" height="490" key="find.popup" timestamp="1604512271474">
+      <screen x="0" y="23" width="1680" height="938" />
+    </state>
+    <state x="854" y="287" width="604" height="490" key="find.popup/0.23.1680.938@0.23.1680.938" timestamp="1604512271474" />
+  </component>
+</project>
