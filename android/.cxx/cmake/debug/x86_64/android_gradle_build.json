@@ -1,0 +1,49 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/src/main/cpp/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"/Users/hfli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/x86_64 --target clean"
+	],
+	"libraries" : 
+	{
+		"libcrypto-Debug-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libcrypto",
+			"buildType" : "debug",
+			"output" : "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/src/main/cpp/../jniLibs/x86_64/libcrypto.so",
+			"toolchain" : "7313459951877205053"
+		},
+		"native_sqlcipher-Debug-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "native_sqlcipher",
+			"buildCommand" : "/Users/hfli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/x86_64 --target native_sqlcipher",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/Users/hfli/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/hfli/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_sqlcipher_EXPORTS -I/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/src/main/cpp/openssl/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DSQLITE_ENABLE_FTS5 -DSQLITE_HAS_CODEC -DSQLITE_TEMP_STORE=3 -DNDEBUG -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/ios/Classes/sqlite3.c",
+					"workingDirectory" : "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/x86_64"
+				}
+			],
+			"output" : "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/example/build/native_sqlcipher/intermediates/cmake/debug/obj/x86_64/libnative_sqlcipher.so",
+			"toolchain" : "7313459951877205053"
+		}
+	},
+	"toolchains" : 
+	{
+		"7313459951877205053" : 
+		{
+			"cCompilerExecutable" : "/Users/hfli/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/hfli/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

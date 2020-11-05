@@ -1,0 +1,21 @@
+{
+  "buildFiles": [
+    "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/hfli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "libcrypto-Debug-armeabi-v7a": {
+      "artifactName": "libcrypto",
+      "abi": "armeabi-v7a",
+      "output": "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/src/main/cpp/../jniLibs/armeabi-v7a/libcrypto.so"
+    },
+    "native_sqlcipher-Debug-armeabi-v7a": {
+      "artifactName": "native_sqlcipher",
+      "buildCommand": "/Users/hfli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/armeabi-v7a --target native_sqlcipher",
+      "abi": "armeabi-v7a",
+      "output": "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/example/build/native_sqlcipher/intermediates/cmake/debug/obj/armeabi-v7a/libnative_sqlcipher.so"
+    }
+  }
+}

@@ -26,8 +26,22 @@ android {
 
     defaultConfig {
         minSdkVersion 16
+
+        externalNativeBuild {
+            cmake {
+                cFlags "-DSQLITE_ENABLE_FTS5 -DSQLITE_HAS_CODEC -DSQLITE_TEMP_STORE=3 -DNDEBUG"
+                arguments "-DANDROID_STL=c++_shared"
+                abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+            }
+        }
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
     }
 }

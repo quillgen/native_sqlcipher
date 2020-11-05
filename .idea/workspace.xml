@@ -16,10 +16,13 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/android/src/main/cpp/openssl" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/android/src/main/cpp/openssl" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/bindings" />
     </key>
@@ -32,7 +35,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604502518299</updated>
-      <workItem from="1604502520062" duration="7985000" />
+      <workItem from="1604502520062" duration="12463000" />
     </task>
     <servers />
   </component>
@@ -40,33 +43,33 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1241" height="245" key="GridCell.Tab.0.bottom" timestamp="1604512750143">
+    <state width="1241" height="280" key="GridCell.Tab.0.bottom" timestamp="1604557904943">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state width="1241" height="245" key="GridCell.Tab.0.bottom/0.23.1680.938@0.23.1680.938" timestamp="1604512750143" />
+    <state width="1241" height="280" key="GridCell.Tab.0.bottom/0.23.1680.938@0.23.1680.938" timestamp="1604557904943" />
     <state width="1523" height="417" key="GridCell.Tab.0.bottom/0.23.1680.941@0.23.1680.941" timestamp="1604505234049" />
     <state width="1241" height="224" key="GridCell.Tab.0.bottom/0.23.1680.944@0.23.1680.944" timestamp="1604507906885" />
-    <state width="1241" height="245" key="GridCell.Tab.0.center" timestamp="1604512750142">
+    <state width="1241" height="280" key="GridCell.Tab.0.center" timestamp="1604557904943">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state width="1241" height="245" key="GridCell.Tab.0.center/0.23.1680.938@0.23.1680.938" timestamp="1604512750142" />
+    <state width="1241" height="280" key="GridCell.Tab.0.center/0.23.1680.938@0.23.1680.938" timestamp="1604557904943" />
     <state width="1523" height="417" key="GridCell.Tab.0.center/0.23.1680.941@0.23.1680.941" timestamp="1604505234048" />
     <state width="1241" height="224" key="GridCell.Tab.0.center/0.23.1680.944@0.23.1680.944" timestamp="1604507906884" />
-    <state width="1241" height="245" key="GridCell.Tab.0.left" timestamp="1604512750142">
+    <state width="1241" height="280" key="GridCell.Tab.0.left" timestamp="1604557904943">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state width="1241" height="245" key="GridCell.Tab.0.left/0.23.1680.938@0.23.1680.938" timestamp="1604512750142" />
+    <state width="1241" height="280" key="GridCell.Tab.0.left/0.23.1680.938@0.23.1680.938" timestamp="1604557904943" />
     <state width="1523" height="417" key="GridCell.Tab.0.left/0.23.1680.941@0.23.1680.941" timestamp="1604505234047" />
     <state width="1241" height="224" key="GridCell.Tab.0.left/0.23.1680.944@0.23.1680.944" timestamp="1604507906884" />
-    <state width="1241" height="245" key="GridCell.Tab.0.right" timestamp="1604512750142">
+    <state width="1241" height="280" key="GridCell.Tab.0.right" timestamp="1604557904943">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state width="1241" height="245" key="GridCell.Tab.0.right/0.23.1680.938@0.23.1680.938" timestamp="1604512750142" />
+    <state width="1241" height="280" key="GridCell.Tab.0.right/0.23.1680.938@0.23.1680.938" timestamp="1604557904943" />
     <state width="1523" height="417" key="GridCell.Tab.0.right/0.23.1680.941@0.23.1680.941" timestamp="1604505234048" />
     <state width="1241" height="224" key="GridCell.Tab.0.right/0.23.1680.944@0.23.1680.944" timestamp="1604507906885" />
-    <state x="854" y="287" width="604" height="490" key="find.popup" timestamp="1604512271474">
+    <state x="854" y="287" width="604" height="490" key="find.popup" timestamp="1604547057620">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state x="854" y="287" width="604" height="490" key="find.popup/0.23.1680.938@0.23.1680.938" timestamp="1604512271474" />
+    <state x="854" y="287" width="604" height="490" key="find.popup/0.23.1680.938@0.23.1680.938" timestamp="1604547057620" />
   </component>
 </project>

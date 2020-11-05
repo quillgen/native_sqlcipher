@@ -1,0 +1,7 @@
+# ninja log v5
+0	4592	0	CMakeFiles/native_sqlcipher.dir/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/ios/Classes/sqlite3.c.o	2ddce2d21ef04bf2
+4592	4816	0	/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/example/build/native_sqlcipher/intermediates/cmake/debug/obj/arm64-v8a/libnative_sqlcipher.so	11befe11ce055656
+1	220	0	/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/example/build/native_sqlcipher/intermediates/cmake/debug/obj/arm64-v8a/libnative_sqlcipher.so	e089261e773576cf
+1	217	0	/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/example/build/native_sqlcipher/intermediates/cmake/debug/obj/arm64-v8a/libnative_sqlcipher.so	11befe11ce055656
+1	220	0	/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/example/build/native_sqlcipher/intermediates/cmake/debug/obj/arm64-v8a/libnative_sqlcipher.so	e089261e773576cf
+2	234	0	/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/example/build/native_sqlcipher/intermediates/cmake/debug/obj/arm64-v8a/libnative_sqlcipher.so	e089261e773576cf

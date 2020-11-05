@@ -1,0 +1,3 @@
+/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/x86/CMakeFiles/edit_cache.dir
+/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/x86/CMakeFiles/rebuild_cache.dir
+/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/x86/CMakeFiles/native_sqlcipher.dir

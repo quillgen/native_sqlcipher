@@ -1,0 +1,21 @@
+{
+  "buildFiles": [
+    "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/hfli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "native_sqlcipher-Debug-arm64-v8a": {
+      "artifactName": "native_sqlcipher",
+      "buildCommand": "/Users/hfli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/.cxx/cmake/debug/arm64-v8a --target native_sqlcipher",
+      "abi": "arm64-v8a",
+      "output": "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/example/build/native_sqlcipher/intermediates/cmake/debug/obj/arm64-v8a/libnative_sqlcipher.so"
+    },
+    "libcrypto-Debug-arm64-v8a": {
+      "artifactName": "libcrypto",
+      "abi": "arm64-v8a",
+      "output": "/Users/hfli/Documents/PROJECTS/app/native_sqlcipher/android/src/main/cpp/../jniLibs/arm64-v8a/libcrypto.so"
+    }
+  }
+}
