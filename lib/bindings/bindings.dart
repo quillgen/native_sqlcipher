@@ -329,6 +329,8 @@ class _SQLiteBindings {
   /// error code and message may or may not be set.
   Pointer<Utf8> Function(Pointer<Database> database) sqlite3_errmsg;
 
+  int Function(Pointer<Database> database) sqlite3_last_insert_rowid;
+
   // sqlcipher functions
   int Function(Pointer<Database> database, Pointer<Utf8> key, int keyLength)
       sqlite3_key;
@@ -394,6 +396,11 @@ class _SQLiteBindings {
     sqlite3_column_text = sqlite
         .lookup<NativeFunction<sqlite3_column_text_native_t>>(
             "sqlite3_column_text")
+        .asFunction();
+
+    sqlite3_last_insert_rowid = sqlite
+        .lookup<NativeFunction<sqlite3_last_insert_rowid_native_t>>(
+            "sqlite3_last_insert_rowid")
         .asFunction();
 
     // sqlcipher functions

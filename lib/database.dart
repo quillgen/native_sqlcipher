@@ -120,6 +120,10 @@ class Database {
     return Result._(this, statement, columnIndices);
   }
 
+  int last_insert_rowid() {
+    return bindings.sqlite3_last_insert_rowid(_database);
+  }
+
   SQLiteException _loadError([int errorCode]) {
     String errorMessage = bindings.sqlite3_errmsg(_database).ref.toString();
     if (errorCode == null) {

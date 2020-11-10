@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
     d.execute("drop table if exists email;");
     d.execute("""
       create table Cookies (
-        id integer primary key,
+        id integer primary key autoincrement,
         name text not null,
         alternative_name text
       );""");
@@ -80,8 +80,10 @@ class _MyAppState extends State<MyApp> {
       CREATE VIRTUAL TABLE email USING fts5(sender, title, body);
     """);
     d.execute("""
-      insert into Cookies values(1, 'a', 'b');
+      insert into Cookies values(null, 'a', 'b');
     """);
+    int id = d.last_insert_rowid();
+    print("inserted: $id");
     d.close();
   }
 }
