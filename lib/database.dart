@@ -26,6 +26,16 @@ class Database {
   Pointer<types.Database> _database;
   bool _open = false;
 
+  Pointer<types.Database> get pointer => _database;
+
+  static Database fromPointer(Pointer<types.Database> pointer) {
+    return Database._internal(pointer);
+  }
+
+  Database._internal(Pointer<types.Database> database)
+      : _database = database,
+        _open = true;
+
   /// Open a database located at the file [path].
   Database(String path, String key,
       [int flags = Flags.SQLITE_OPEN_READWRITE | Flags.SQLITE_OPEN_CREATE]) {

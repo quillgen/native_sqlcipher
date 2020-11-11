@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -65,25 +67,21 @@ class _MyAppState extends State<MyApp> {
   Future<void> onTestPressed() async {
     print("clicked test");
     final dir = await getApplicationDocumentsDirectory();
-    final dbPath = join(dir.path, "test1.db");
+    final dbPath = join(dir.path, "test11.db");
     print("opening $dbPath");
-    Database d = Database(dbPath, "helloworld");
-    d.execute("drop table if exists Cookies;");
-    d.execute("drop table if exists email;");
-    d.execute("""
-      create table Cookies (
-        id integer primary key autoincrement,
-        name text not null,
-        alternative_name text
-      );""");
-    d.execute("""
-      CREATE VIRTUAL TABLE email USING fts5(sender, title, body);
+    //Database d1 = Database(dbPath, "helloworld");
+    Database d1 = Database.fromPointer(Pointer.fromAddress(140277749969312).cast());
+
+
+    int p = d1.pointer.address;
+    print("address: $p");
+//    d1.execute("""
+//      insert into Cookies values(100, 'd1', 'foo');
+//    """);
+//
+//    d1 = Database(dbPath, "helloworld");
+    d1.execute("""
+      delete from Cookies where id=100;
     """);
-    d.execute("""
-      insert into Cookies values(null, 'a', 'b');
-    """);
-    int id = d.last_insert_rowid();
-    print("inserted: $id");
-    d.close();
   }
 }

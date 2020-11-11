@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb6fe48-49a1-4b51-9f06-67d5344c73c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bindings/bindings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bindings/bindings.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bindings/signatures.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bindings/signatures.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/database.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/database.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,37 +67,82 @@
       <option name="presentableId" value="Default" />
       <updated>1604502518299</updated>
       <workItem from="1604502520062" duration="12463000" />
+      <workItem from="1605105715634" duration="2458000" />
     </task>
+    <task id="LOCAL-00001" summary="added sqlite3_last_insert_rowid binding">
+      <created>1605029791010</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605029791010</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added sqlite3_last_insert_rowid binding" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sqlite3_last_insert_rowid binding" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1241" height="280" key="GridCell.Tab.0.bottom" timestamp="1604557904943">
+    <state x="440" y="67" key="CommitChangelistDialog2" timestamp="1605029790575">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state width="1241" height="280" key="GridCell.Tab.0.bottom/0.23.1680.938@0.23.1680.938" timestamp="1604557904943" />
+    <state x="440" y="67" key="CommitChangelistDialog2/0.23.1680.938@0.23.1680.938" timestamp="1605029790575" />
+    <state width="1402" height="433" key="GridCell.Tab.0.bottom" timestamp="1605107831494">
+      <screen x="0" y="23" width="1680" height="938" />
+    </state>
+    <state width="1402" height="433" key="GridCell.Tab.0.bottom/0.23.1680.938@0.23.1680.938" timestamp="1605107831494" />
     <state width="1523" height="417" key="GridCell.Tab.0.bottom/0.23.1680.941@0.23.1680.941" timestamp="1604505234049" />
     <state width="1241" height="224" key="GridCell.Tab.0.bottom/0.23.1680.944@0.23.1680.944" timestamp="1604507906885" />
-    <state width="1241" height="280" key="GridCell.Tab.0.center" timestamp="1604557904943">
+    <state width="1402" height="433" key="GridCell.Tab.0.center" timestamp="1605107831494">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state width="1241" height="280" key="GridCell.Tab.0.center/0.23.1680.938@0.23.1680.938" timestamp="1604557904943" />
+    <state width="1402" height="433" key="GridCell.Tab.0.center/0.23.1680.938@0.23.1680.938" timestamp="1605107831494" />
     <state width="1523" height="417" key="GridCell.Tab.0.center/0.23.1680.941@0.23.1680.941" timestamp="1604505234048" />
     <state width="1241" height="224" key="GridCell.Tab.0.center/0.23.1680.944@0.23.1680.944" timestamp="1604507906884" />
-    <state width="1241" height="280" key="GridCell.Tab.0.left" timestamp="1604557904943">
+    <state width="1402" height="433" key="GridCell.Tab.0.left" timestamp="1605107831493">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state width="1241" height="280" key="GridCell.Tab.0.left/0.23.1680.938@0.23.1680.938" timestamp="1604557904943" />
+    <state width="1402" height="433" key="GridCell.Tab.0.left/0.23.1680.938@0.23.1680.938" timestamp="1605107831493" />
     <state width="1523" height="417" key="GridCell.Tab.0.left/0.23.1680.941@0.23.1680.941" timestamp="1604505234047" />
     <state width="1241" height="224" key="GridCell.Tab.0.left/0.23.1680.944@0.23.1680.944" timestamp="1604507906884" />
-    <state width="1241" height="280" key="GridCell.Tab.0.right" timestamp="1604557904943">
+    <state width="1402" height="433" key="GridCell.Tab.0.right" timestamp="1605107831494">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state width="1241" height="280" key="GridCell.Tab.0.right/0.23.1680.938@0.23.1680.938" timestamp="1604557904943" />
+    <state width="1402" height="433" key="GridCell.Tab.0.right/0.23.1680.938@0.23.1680.938" timestamp="1605107831494" />
     <state width="1523" height="417" key="GridCell.Tab.0.right/0.23.1680.941@0.23.1680.941" timestamp="1604505234048" />
     <state width="1241" height="224" key="GridCell.Tab.0.right/0.23.1680.944@0.23.1680.944" timestamp="1604507906885" />
+    <state x="463" y="232" key="Vcs.Push.Dialog.v2" timestamp="1605029819211">
+      <screen x="0" y="23" width="1680" height="938" />
+    </state>
+    <state x="463" y="232" key="Vcs.Push.Dialog.v2/0.23.1680.938@0.23.1680.938" timestamp="1605029819211" />
     <state x="854" y="287" width="604" height="490" key="find.popup" timestamp="1604547057620">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
