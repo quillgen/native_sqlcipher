@@ -1,10 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:native_sqlcipher/native_sqlcipher.dart';
+import 'package:native_sqlcipher/connection_tracker.dart';
 import 'package:native_sqlcipher/database.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -20,6 +19,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
+  Database d1;
 
   @override
   void initState() {
@@ -55,33 +55,63 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: FlatButton(
-            child: Text("Test sqlite"),
-            onPressed: onTestPressed,
+          child: Column(
+            children: [
+              FlatButton(
+                child: Text("Create"),
+                onPressed: onCreatePressed,
+              ),
+              FlatButton(
+                child: Text("Insert"),
+                onPressed: onInsertPressed,
+              ),
+              FlatButton(
+                child: Text("Delete"),
+                onPressed: onDeletePressed,
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 
-  Future<void> onTestPressed() async {
+  Future<void> onCreatePressed() async {
     print("clicked test");
     final dir = await getApplicationDocumentsDirectory();
-    final dbPath = join(dir.path, "test11.db");
+    final dbPath = join(dir.path, "t.db");
     print("opening $dbPath");
-    //Database d1 = Database(dbPath, "helloworld");
-    Database d1 = Database.fromPointer(Pointer.fromAddress(140277749969312).cast());
+    d1 = Database(dbPath, "helloworld");
 
-
-    int p = d1.pointer.address;
-    print("address: $p");
-//    d1.execute("""
-//      insert into Cookies values(100, 'd1', 'foo');
-//    """);
-//
-//    d1 = Database(dbPath, "helloworld");
     d1.execute("""
-      delete from Cookies where id=100;
+      create table t(id int not null primary key, name text);
     """);
+    d1.close();
+  }
+
+  Future<void> onDeletePressed() async {
+    print("clicked test");
+    final dir = await getApplicationDocumentsDirectory();
+    final dbPath = join(dir.path, "t.db");
+    print("opening $dbPath");
+    d1 = Database(dbPath, "helloworld");
+    ConnectionTracker.instance.markOpen(d1.pointer.address);
+    d1.execute("""
+      delete from t where id<10;
+    """);
+  }
+
+  Future<void> onInsertPressed() async {
+    print("clicked test");
+    ConnectionTracker.instance.forceCloseExisting();
+    final dir = await getApplicationDocumentsDirectory();
+    final dbPath = join(dir.path, "t.db");
+    print("opening $dbPath");
+    d1 = Database(dbPath, "helloworld");
+
+    d1.execute("""
+      insert into t(id, name) values(1, 'test');
+    """);
+    ConnectionTracker.instance.markClosed(d1.pointer.address);
   }
 }
