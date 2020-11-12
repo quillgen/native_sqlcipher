@@ -53,7 +53,16 @@ class ConnectionTracker {
   }
 
   void _initializeDb() {
-    _trackingDb.execute("""
+    final Row row = _trackingDb
+        .query(
+            "select count(*) from sqlite_master where tbl_name='connections';")
+        .first;
+    bool exists = row.readColumnByIndexAsInt(0) > 0;
+    if (exists) {
+      print("in-mem tracking db detected");
+    } else {
+      print("creating tracking table...");
+      _trackingDb.execute("""
     create table if not exists connections
     (
       ptr integer primary key not null,
@@ -62,6 +71,7 @@ class ConnectionTracker {
       closed_time text
     );
     """);
+    }
   }
 
   void forceCloseExisting() {
