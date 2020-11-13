@@ -27,8 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2fb6fe48-49a1-4b51-9f06-67d5344c73c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bindings/bindings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bindings/bindings.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bindings/signatures.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bindings/signatures.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/database.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/database.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +70,7 @@
       <workItem from="1605180509180" duration="6201000" />
       <workItem from="1605239758019" duration="1393000" />
       <workItem from="1605254023492" duration="433000" />
-      <workItem from="1605280618199" duration="1021000" />
+      <workItem from="1605280618199" duration="1112000" />
     </task>
     <task id="LOCAL-00001" summary="added sqlite3_last_insert_rowid binding">
       <created>1605029791010</created>
@@ -94,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605280936617</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added int64 support">
+      <created>1605284460937</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605284460937</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,13 +134,14 @@
     <MESSAGE value="added sqlite3_last_insert_rowid binding" />
     <MESSAGE value="added raw pointer of `Database`" />
     <MESSAGE value="Allow close multiple times." />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow close multiple times." />
+    <MESSAGE value="added int64 support" />
+    <option name="LAST_COMMIT_MESSAGE" value="added int64 support" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="67" key="CommitChangelistDialog2" timestamp="1605280936353">
+    <state x="440" y="67" key="CommitChangelistDialog2" timestamp="1605284460706">
       <screen x="0" y="23" width="1680" height="938" />
     </state>
-    <state x="440" y="67" key="CommitChangelistDialog2/0.23.1680.938@0.23.1680.938" timestamp="1605280936353" />
+    <state x="440" y="67" key="CommitChangelistDialog2/0.23.1680.938@0.23.1680.938" timestamp="1605284460706" />
     <state width="1104" height="243" key="GridCell.Tab.0.bottom" timestamp="1605280820403">
       <screen x="0" y="23" width="1680" height="938" />
     </state>

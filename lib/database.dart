@@ -202,8 +202,7 @@ class _ResultIterator implements ClosableIterator<Row> {
   }
 
   void close() {
-    if(_closed)
-      return;
+    if (_closed) return;
     _currentRow?._setNotCurrent();
     _closed = true;
     bindings.sqlite3_finalize(_statement);
@@ -266,11 +265,20 @@ class Row {
     return readColumnByIndexAsInt(_columnIndices[columnName]);
   }
 
+  int readColumnAsInt64(String columnName) {
+    return readColumnByIndexAsInt64(_columnIndices[columnName]);
+  }
+
   /// Reads column [columnIndex] and converts to [Type.Integer] if not an
   /// integer.
   int readColumnByIndexAsInt(int columnIndex) {
     _checkIsCurrentRow();
     return bindings.sqlite3_column_int(_statement, columnIndex);
+  }
+
+  int readColumnByIndexAsInt64(int columnIndex) {
+    _checkIsCurrentRow();
+    return bindings.sqlite3_column_int64(_statement, columnIndex);
   }
 
   /// Reads column [columnName] and converts to [Type.Text] if not text.
