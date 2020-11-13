@@ -202,6 +202,8 @@ class _ResultIterator implements ClosableIterator<Row> {
   }
 
   void close() {
+    if(_closed)
+      return;
     _currentRow?._setNotCurrent();
     _closed = true;
     bindings.sqlite3_finalize(_statement);

@@ -3,7 +3,6 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:native_sqlcipher/native_sqlcipher.dart';
-import 'package:native_sqlcipher/connection_tracker.dart';
 import 'package:native_sqlcipher/database.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
