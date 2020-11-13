@@ -288,6 +288,9 @@ class _SQLiteBindings {
   int Function(Pointer<Statement> statement, int columnIndex)
       sqlite3_column_int;
 
+  int Function(Pointer<Statement> statement, int columnIndex)
+      sqlite3_column_int64;
+
   Pointer<Utf8> Function(Pointer<Statement> statement, int columnIndex)
       sqlite3_column_text;
 
@@ -392,6 +395,10 @@ class _SQLiteBindings {
     sqlite3_column_int = sqlite
         .lookup<NativeFunction<sqlite3_column_int_native_t>>(
             "sqlite3_column_int")
+        .asFunction();
+    sqlite3_column_int64 = sqlite
+        .lookup<NativeFunction<sqlite3_column_int64_native_t>>(
+        "sqlite3_column_int64")
         .asFunction();
     sqlite3_column_text = sqlite
         .lookup<NativeFunction<sqlite3_column_text_native_t>>(
