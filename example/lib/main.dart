@@ -55,7 +55,8 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Column(
+          child:
+          Column(
             children: [
               FlatButton(
                 child: Text("Create"),
@@ -95,7 +96,6 @@ class _MyAppState extends State<MyApp> {
     final dbPath = join(dir.path, "t.db");
     print("opening $dbPath");
     d1 = Database(dbPath, "helloworld");
-    ConnectionTracker.instance.markOpen(d1.pointer.address);
     d1.execute("""
       delete from t where id<10;
     """);
@@ -103,15 +103,13 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> onInsertPressed() async {
     print("clicked test");
-    ConnectionTracker.instance.forceCloseExisting();
     final dir = await getApplicationDocumentsDirectory();
     final dbPath = join(dir.path, "t.db");
     print("opening $dbPath");
     d1 = Database(dbPath, "helloworld");
 
-    d1.execute("""
-      insert into t(id, name) values(1, 'test');
+    d1.query("""
+      select * from t;
     """);
-    ConnectionTracker.instance.markClosed(d1.pointer.address);
   }
 }
