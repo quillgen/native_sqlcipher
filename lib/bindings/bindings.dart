@@ -6,6 +6,7 @@
 
 import "dart:ffi";
 import 'dart:io';
+import 'dart:typed_data';
 import "package:ffi/ffi.dart";
 
 import "signatures.dart";
@@ -291,6 +292,12 @@ class _SQLiteBindings {
   int Function(Pointer<Statement> statement, int columnIndex)
       sqlite3_column_int64;
 
+  int Function(Pointer<Statement> statement, int columnIndex)
+      sqlite3_column_bytes;
+
+  Pointer<Uint8> Function(Pointer<Statement> statement, int columnIndex)
+      sqlite3_column_blob;
+
   Pointer<Utf8> Function(Pointer<Statement> statement, int columnIndex)
       sqlite3_column_text;
 
@@ -398,11 +405,20 @@ class _SQLiteBindings {
         .asFunction();
     sqlite3_column_int64 = sqlite
         .lookup<NativeFunction<sqlite3_column_int64_native_t>>(
-        "sqlite3_column_int64")
+            "sqlite3_column_int64")
         .asFunction();
     sqlite3_column_text = sqlite
         .lookup<NativeFunction<sqlite3_column_text_native_t>>(
             "sqlite3_column_text")
+        .asFunction();
+
+    sqlite3_column_blob = sqlite
+        .lookup<NativeFunction<sqlite3_column_blob_native_t>>(
+        "sqlite3_column_blob")
+        .asFunction();
+    sqlite3_column_bytes = sqlite
+        .lookup<NativeFunction<sqlite3_column_bytes_native_t>>(
+        "sqlite3_column_bytes")
         .asFunction();
 
     sqlite3_last_insert_rowid = sqlite

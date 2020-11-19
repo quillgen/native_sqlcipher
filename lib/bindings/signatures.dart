@@ -61,6 +61,11 @@ typedef sqlite3_column_int64_native_t = Int64 Function(
 typedef sqlite3_column_text_native_t = Pointer<Utf8> Function(
     Pointer<Statement> statement, Int32 columnIndex);
 
+typedef sqlite3_column_bytes_native_t = Int64 Function(
+    Pointer<Statement> statement, Int32 columnIndex);
+
+typedef sqlite3_column_blob_native_t = Pointer<Uint8> Function(
+    Pointer<Statement> statement, Int32 columnIndex);
 
 typedef sqlite3_last_insert_rowid_native_t = Int32 Function(
     Pointer<Database> database);

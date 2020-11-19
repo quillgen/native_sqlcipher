@@ -6,6 +6,7 @@
 
 import "dart:collection";
 import "dart:ffi";
+import 'dart:typed_data';
 
 import "package:ffi/ffi.dart";
 
@@ -279,6 +280,20 @@ class Row {
   int readColumnByIndexAsInt64(int columnIndex) {
     _checkIsCurrentRow();
     return bindings.sqlite3_column_int64(_statement, columnIndex);
+  }
+
+  ///
+  ///
+  Uint8List readColumnByIndexAsBytes(int columnIndex) {
+    _checkIsCurrentRow();
+    int length = bindings.sqlite3_column_bytes(_statement, columnIndex);
+    Pointer<Uint8> buffer =
+        bindings.sqlite3_column_blob(_statement, columnIndex);
+    return buffer.asTypedList(length);
+  }
+
+  Uint8List readColumnAsBytes(String columnName) {
+    return readColumnByIndexAsBytes(_columnIndices[columnName]);
   }
 
   /// Reads column [columnName] and converts to [Type.Text] if not text.

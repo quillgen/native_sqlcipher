@@ -1,9 +1,11 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:native_sqlcipher/native_sqlcipher.dart';
-import 'package:native_sqlcipher/database.dart';
+import 'package:native_sqlcipher/database.dart' as sqlite;
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -18,7 +20,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-  Database d1;
+  sqlite.Database d1;
 
   @override
   void initState() {
@@ -54,20 +56,11 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child:
-          Column(
+          child: Column(
             children: [
               FlatButton(
-                child: Text("Create"),
-                onPressed: onCreatePressed,
-              ),
-              FlatButton(
-                child: Text("Insert"),
-                onPressed: onInsertPressed,
-              ),
-              FlatButton(
-                child: Text("Delete"),
-                onPressed: onDeletePressed,
+                child: Text("Test"),
+                onPressed: OnTestClicked,
               ),
             ],
           ),
@@ -76,39 +69,34 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Future<void> onCreatePressed() async {
+  Future<void> OnTestClicked() async {
     print("clicked test");
     final dir = await getApplicationDocumentsDirectory();
     final dbPath = join(dir.path, "t.db");
     print("opening $dbPath");
-    d1 = Database(dbPath, "helloworld");
+    d1 = sqlite.Database(dbPath, "helloworld");
 
     d1.execute("""
-      create table t(id int not null primary key, name text);
+      create table if not exists foo(
+        id integer primary key autoincrement,
+        name text,
+        content blob
+      );
     """);
-    d1.close();
-  }
-
-  Future<void> onDeletePressed() async {
-    print("clicked test");
-    final dir = await getApplicationDocumentsDirectory();
-    final dbPath = join(dir.path, "t.db");
-    print("opening $dbPath");
-    d1 = Database(dbPath, "helloworld");
     d1.execute("""
-      delete from t where id<10;
+      insert into foo(name, content) values('riguz', x'CAFEBABE');
     """);
-  }
-
-  Future<void> onInsertPressed() async {
-    print("clicked test");
-    final dir = await getApplicationDocumentsDirectory();
-    final dbPath = join(dir.path, "t.db");
-    print("opening $dbPath");
-    d1 = Database(dbPath, "helloworld");
-
-    d1.query("""
-      select * from t;
-    """);
+    sqlite.Result r = d1.query("select id, name, content from foo;");
+    try {
+      for (sqlite.Row x in r) {
+        int id = x.readColumnAsInt("id");
+        String name = x.readColumnAsText("name");
+        var content = x.readColumnAsBytes("content");
+        print("-> $id, $name, $content");
+      }
+    } finally {
+      r.close();
+      d1.close();
+    }
   }
 }
