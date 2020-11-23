@@ -5,3 +5,11 @@
 .pub/
 
 build/
+
+.idea
+android/.cxx
+
+Podfile
+Podfile.lock
+Pods
+.symlinks/
