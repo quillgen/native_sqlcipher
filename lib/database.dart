@@ -287,6 +287,7 @@ class Row {
   Uint8List readColumnByIndexAsBytes(int columnIndex) {
     _checkIsCurrentRow();
     int length = bindings.sqlite3_column_bytes(_statement, columnIndex);
+    if (length == 0) return null;
     Pointer<Uint8> buffer =
         bindings.sqlite3_column_blob(_statement, columnIndex);
     return buffer.asTypedList(length);
