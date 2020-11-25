@@ -75,7 +75,9 @@ class _MyAppState extends State<MyApp> {
     final dbPath = join(dir.path, "t.db");
     print("opening $dbPath");
     d1 = sqlite.Database(dbPath, "helloworld");
-
+    d1.execute("""
+      drop table if exists foo;
+    """);
     d1.execute("""
       create table if not exists foo(
         id integer primary key autoincrement,
@@ -84,7 +86,7 @@ class _MyAppState extends State<MyApp> {
       );
     """);
     d1.execute("""
-      insert into foo(name, content) values('riguz', x'CAFEBABE');
+      insert into foo(name, content) values('riguz', x'89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d49444154089963a8d7bef71f00053d0288b0402c1b0000000049454e44ae426082');
     """);
     sqlite.Result r = d1.query("select id, name, content from foo;");
     try {
