@@ -288,10 +288,8 @@ class Row {
     _checkIsCurrentRow();
     int length = bindings.sqlite3_column_bytes(_statement, columnIndex);
     if (length == 0) return null;
-    Pointer<Uint8> p =
-        bindings.sqlite3_column_blob(_statement, columnIndex);
-    Uint8List buffer  = p.asTypedList(length);
-    print("readed blob: $buffer");
+    Pointer<Uint8> p = bindings.sqlite3_column_blob(_statement, columnIndex);
+    Uint8List buffer = p.asTypedList(length);
     Uint8List clone = Uint8List.fromList(buffer);
     return clone;
   }
