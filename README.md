@@ -1,15 +1,12 @@
 # native_sqlcipher
 
-A new flutter plugin project.
+Flutter sqlcipher plugin, for using sqlcipher in both Android and iOS by dart:ffi. The implementations are copied from [dart ffi example](https://github.com/dart-lang/sdk/tree/master/samples/ffi/sqlite). However there're a few changes made:
 
-## Getting Started
+* Use sqlcipher(sqlite 3.31.0) instead of sqlite
+* Added support to both Android and iOS platform
+* Additional apis are added
+ 
+This plugin is mainly created to support secure storage in [Okapia app](https://github.com/drriguz/ben).
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
