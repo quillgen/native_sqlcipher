@@ -2,8 +2,6 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-// @dart = 2.9
-
 import "dart:ffi";
 
 import "package:ffi/ffi.dart";
@@ -55,20 +53,15 @@ typedef sqlite3_column_double_native_t = Double Function(
 typedef sqlite3_column_int_native_t = Int32 Function(
     Pointer<Statement> statement, Int32 columnIndex);
 
-typedef sqlite3_column_int64_native_t = Int64 Function(
-    Pointer<Statement> statement, Int32 columnIndex);
-
 typedef sqlite3_column_text_native_t = Pointer<Utf8> Function(
     Pointer<Statement> statement, Int32 columnIndex);
 
+///// ----------------------------------------------
+typedef sqlite3_column_int64_native_t = Int64 Function(
+    Pointer<Statement> statement, Int32 columnIndex);
 typedef sqlite3_column_bytes_native_t = Int64 Function(
     Pointer<Statement> statement, Int32 columnIndex);
 
 typedef sqlite3_column_blob_native_t = Pointer<Uint8> Function(
     Pointer<Statement> statement, Int32 columnIndex);
-
-typedef sqlite3_last_insert_rowid_native_t = Int32 Function(
-    Pointer<Database> database);
-// sqlcipher functions
-typedef sqlite3_key_native_t = Int32 Function(
-    Pointer<Database> database, Pointer<Utf8> key, Int32 keyLength);
+///// ----------------------------------------------
