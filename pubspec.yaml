@@ -1,8 +1,8 @@
 name: native_sqlcipher
 description: A new flutter plugin project.
 version: 0.0.1
-author:
-homepage:
+author: Riguz Lee
+homepage: https://github.com/drriguz/native_sqlcipher
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

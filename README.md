@@ -8,5 +8,7 @@ Flutter sqlcipher plugin, for using sqlcipher in both Android and iOS by dart:ff
  
 This plugin is mainly created to support secure storage in [Okapia app](https://github.com/drriguz/ben).
 
+Please refer [example/lib/main.dart](example/lib/main.dart) for usage.
+
 
 
