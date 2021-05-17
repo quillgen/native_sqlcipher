@@ -10,7 +10,7 @@ import "dart:io";
 import "package:ffi/ffi.dart";
 import "package:test/test.dart";
 
-import '../lib/sqlcipher.dart';
+import '../lib/native_sqlcipher.dart';
 
 void main() {
   final dbPath = Platform.script.resolve("test.db").path;

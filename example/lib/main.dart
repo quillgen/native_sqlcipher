@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:native_sqlcipher/sqlcipher.dart' as sqlite;
+import 'package:native_sqlcipher/native_sqlcipher.dart' as sqlite;
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
