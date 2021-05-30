@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
     final dir = await getApplicationDocumentsDirectory();
     final dbPath = join(dir.path, "t.db");
     print("opening $dbPath");
-    d1 = sqlite.Database(dbPath);
+    d1 = sqlite.Database(dbPath, "abc");
     d1.execute("""
       drop table if exists foo;
     """);

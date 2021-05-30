@@ -15,7 +15,7 @@ import '../lib/native_sqlcipher.dart';
 void main() {
   final dbPath = Platform.script.resolve("test.db").path;
   test("sqlite integration test", () {
-    Database d = Database(dbPath);
+    Database d = Database(dbPath, "hello world!");
     d.execute("drop table if exists Cookies;");
     d.execute("""
       create table Cookies (
@@ -106,8 +106,8 @@ void main() {
   });
 
   test("concurrent db open and queries", () {
-    Database d = Database(dbPath);
-    Database d2 = Database(dbPath);
+    Database d = Database(dbPath, "hello world!");
+    Database d2 = Database(dbPath, "hello world!");
     d.execute("drop table if exists Cookies;");
     d.execute("""
       create table Cookies (
@@ -140,7 +140,7 @@ void main() {
   });
 
   test("stress test", () {
-    Database d = Database(dbPath);
+    Database d = Database(dbPath, "hello world!");
     d.execute("drop table if exists Cookies;");
     d.execute("""
       create table Cookies (

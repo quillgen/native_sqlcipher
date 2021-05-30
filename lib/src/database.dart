@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import "dart:collection";
+import 'dart:convert';
 import "dart:ffi";
 import 'dart:typed_data';
 
@@ -37,8 +38,18 @@ class Database {
     calloc.free(pathC);
 
     if (resultCode == Errors.SQLITE_OK) {
-      final keyC = Utf8.
-      _open = true;
+      final keyPointer = key.toNativeUtf8();
+
+      final int setKeyResult =
+          bindings.sqlite3_key(_database, keyPointer, key.length);
+      if (setKeyResult == Errors.SQLITE_OK) {
+        _open = true;
+      } else {
+        print("set database cipher failed: $resultCode");
+        SQLiteException exception = _loadError(resultCode);
+        close();
+        throw exception;
+      }
     } else {
       // Even if "open" fails, sqlite3 will still create a database object. We
       // can just destroy it.
