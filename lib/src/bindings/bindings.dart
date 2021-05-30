@@ -303,6 +303,11 @@ class _SQLiteBindings {
 
   late Pointer<Uint8> Function(Pointer<Statement> statement, int columnIndex)
       sqlite3_column_blob;
+
+  late int Function(Pointer<Database> database) sqlite3_last_insert_rowid;
+  late int Function(Pointer<Database> database, Pointer<Utf8> key, int keyLength)
+      sqlite3_key;
+
   ///// ----------------------------------------------
 
   /// The sqlite3_errstr() interface returns the English-language text that
@@ -408,15 +413,23 @@ class _SQLiteBindings {
     ///// ----------------------------------------------
     sqlite3_column_int64 = sqlite
         .lookup<NativeFunction<sqlite3_column_int64_native_t>>(
-        "sqlite3_column_int64")
+            "sqlite3_column_int64")
         .asFunction();
     sqlite3_column_blob = sqlite
         .lookup<NativeFunction<sqlite3_column_blob_native_t>>(
-        "sqlite3_column_blob")
+            "sqlite3_column_blob")
         .asFunction();
     sqlite3_column_bytes = sqlite
         .lookup<NativeFunction<sqlite3_column_bytes_native_t>>(
-        "sqlite3_column_bytes")
+            "sqlite3_column_bytes")
+        .asFunction();
+
+    sqlite3_last_insert_rowid = sqlite
+        .lookup<NativeFunction<sqlite3_last_insert_rowid_native_t>>(
+            "sqlite3_last_insert_rowid")
+        .asFunction();
+    sqlite3_key = sqlite
+        .lookup<NativeFunction<sqlite3_key_native_t>>("sqlite3_key")
         .asFunction();
     ///// ----------------------------------------------
   }

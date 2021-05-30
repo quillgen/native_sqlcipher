@@ -26,7 +26,7 @@ class Database {
   bool _open = false;
 
   /// Open a database located at the file [path].
-  Database(String path,
+  Database(String path, String key,
       [int flags = Flags.SQLITE_OPEN_READWRITE | Flags.SQLITE_OPEN_CREATE]) {
     Pointer<Pointer<types.Database>> dbOut = calloc();
     final pathC = path.toNativeUtf8();
@@ -37,6 +37,7 @@ class Database {
     calloc.free(pathC);
 
     if (resultCode == Errors.SQLITE_OK) {
+      final keyC = Utf8.
       _open = true;
     } else {
       // Even if "open" fails, sqlite3 will still create a database object. We
@@ -107,6 +108,10 @@ class Database {
     return Result._(this, statement, columnIndices);
   }
 
+  int lastInsertRowid() {
+    return bindings.sqlite3_last_insert_rowid(_database);
+  }
+
   SQLiteException _loadError(int errorCode) {
     String errorMessage = bindings.sqlite3_errmsg(_database).toDartString();
     String errorCodeExplanation =
@@ -168,8 +173,7 @@ class _ResultIterator implements ClosableIterator<Row> {
 
   void close() {
     /// fix: allow user to explicitly close statmement
-    if(_closed)
-      return;
+    if (_closed) return;
 
     _currentRow?._setNotCurrent();
     _closed = true;
@@ -254,10 +258,12 @@ class Row {
   int readColumnAsInt64(String columnName) {
     return readColumnByIndexAsInt64(_columnIndices[columnName]!);
   }
+
   int readColumnByIndexAsInt64(int columnIndex) {
     _checkIsCurrentRow();
     return bindings.sqlite3_column_int64(_statement, columnIndex);
   }
+
   Uint8List? readColumnByIndexAsBytes(int columnIndex) {
     _checkIsCurrentRow();
     int length = bindings.sqlite3_column_bytes(_statement, columnIndex);
@@ -271,6 +277,7 @@ class Row {
   Uint8List? readColumnAsBytes(String columnName) {
     return readColumnByIndexAsBytes(_columnIndices[columnName]!);
   }
+
   ///// ----------------------------------------------
 
   void _checkIsCurrentRow() {
@@ -324,6 +331,7 @@ enum Convert { DynamicType, StaticType }
 
 class SQLiteException {
   final String message;
+
   SQLiteException(this.message);
 
   String toString() => message;
