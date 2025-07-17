@@ -1,79 +1,74 @@
-
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:native_sqlcipher/native_sqlcipher.dart' as sqlite;
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:native_sqlcipher/native_sqlcipher.dart' as native_sqlcipher;
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  sqlite.Database d1;
+  late int sumResult;
+  late Future<int> sumAsyncResult;
 
   @override
   void initState() {
     super.initState();
+    sumResult = native_sqlcipher.sum(1, 2);
+    sumAsyncResult = native_sqlcipher.sumAsync(3, 4);
   }
 
   @override
   Widget build(BuildContext context) {
+    const textStyle = TextStyle(fontSize: 25);
+    const spacerSmall = SizedBox(height: 10);
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Native Packages'),
         ),
-        body: Center(
-          child: Column(
-            children: [
-              FlatButton(
-                child: Text("Test"),
-                onPressed: OnTestClicked,
-              ),
-            ],
+        body: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: [
+                const Text(
+                  'This calls a native function through FFI that is shipped as source in the package. '
+                  'The native code is built as part of the Flutter Runner build.',
+                  style: textStyle,
+                  textAlign: TextAlign.center,
+                ),
+                spacerSmall,
+                Text(
+                  'sum(1, 2) = $sumResult',
+                  style: textStyle,
+                  textAlign: TextAlign.center,
+                ),
+                spacerSmall,
+                FutureBuilder<int>(
+                  future: sumAsyncResult,
+                  builder: (BuildContext context, AsyncSnapshot<int> value) {
+                    final displayValue =
+                        (value.hasData) ? value.data : 'loading';
+                    return Text(
+                      'await sumAsync(3, 4) = $displayValue',
+                      style: textStyle,
+                      textAlign: TextAlign.center,
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
-  }
-
-  Future<void> OnTestClicked() async {
-    print("clicked test");
-    final dir = await getApplicationDocumentsDirectory();
-    final dbPath = join(dir.path, "t.db");
-    print("opening $dbPath");
-    d1 = sqlite.Database(dbPath, "abc");
-    d1.execute("""
-      drop table if exists foo;
-    """);
-    d1.execute("""
-      create table if not exists foo(
-        id integer primary key autoincrement,
-        name text,
-        content blob
-      );
-    """);
-    d1.execute("""
-      insert into foo(name, content) values('riguz', x'89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d49444154089963a8d7bef71f00053d0288b0402c1b0000000049454e44ae426082');
-    """);
-    sqlite.Result r = d1.query("select id, name, content from foo;");
-    try {
-      for (sqlite.Row x in r) {
-        int id = x.readColumnAsInt("id");
-        String name = x.readColumnAsText("name");
-        var content = x.readColumnAsBytes("content");
-        print("-> $id, $name, $content");
-      }
-    } finally {
-      r.close();
-      d1.close();
-    }
   }
 }
