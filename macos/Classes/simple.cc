@@ -1,0 +1,5 @@
+#include "../../src/simple_init.cc"
+#include "../../src/entry.cc"
+#include "../../src/pinyin.cc"
+#include "../../src/simple_highlight.cc"
+#include "../../src/simple_tokenizer.cc"

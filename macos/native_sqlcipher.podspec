@@ -18,8 +18,9 @@ A new Flutter FFI plugin project.
   # paths, so Classes contains a forwarder C file that relatively imports
   # `../src/*` so that the C sources can be shared among all target platforms.
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files     = 'Classes/**/*'
 
+  s.resources        = ['../src/contrib/pinyin.txt']
   # If your plugin requires a privacy manifest, for example if it collects user
   # data, update the PrivacyInfo.xcprivacy file to describe your plugin's
   # privacy impact, and then uncomment this line. For more information,
@@ -30,20 +31,25 @@ A new Flutter FFI plugin project.
 
   s.platform = :osx, '10.11'
   s.pod_target_xcconfig = { 
-    'DEFINES_MODULE' => 'YES'
+    'DEFINES_MODULE' => 'YES',
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'c++14',
+    'CLANG_CXX_LIBRARY' => 'libc++',
+    'HEADER_SEARCH_PATHS' => '"${PODS_TARGET_SRCROOT}/../src"'
   }
   s.swift_version = '5.0'
   s.compiler_flags = [
     '-DSQLITE_ENABLE_FTS5',
     '-DSQLITE_HAS_CODEC',
     '-DSQLITE_TEMP_STORE=2',
-    '-DSQLITE_EXTRA_INIT=sqlcipher_extra_init',
+    '-DSQLITE_EXTRA_INIT=combined_sqlite_init',
     '-DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown',
     # use CommonCrypto instead of OpenSSL on macOS
     '-DSQLCIPHER_CRYPTO_CC',
     '-DSQLITE_API=FFI_PLUGIN_EXPORT',
     '-DSQLITE_THREADSAFE=1',
     # disable asserts, otherwise get compiler errors such as: error: implicit declaration of function 'sqlite3FirstAvailableRegister' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-    '-DNDEBUG' 
+    '-DNDEBUG',
+    '-DUSE_JIEBA=1',
+    '-DDISABLE_CMRC=1'
   ]
 end
