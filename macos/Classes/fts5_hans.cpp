@@ -1,0 +1,1 @@
+#include "../../src/fts5_hans.cpp"

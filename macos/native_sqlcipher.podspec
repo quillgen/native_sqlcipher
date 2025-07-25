@@ -19,7 +19,11 @@ A new Flutter FFI plugin project.
   # `../src/*` so that the C sources can be shared among all target platforms.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-
+  s.osx.pod_target_xcconfig = { 
+    'HEADER_SEARCH_PATHS' => [
+      '$(PODS_TARGET_SRCROOT)/../src/include'
+    ]
+  }
   # If your plugin requires a privacy manifest, for example if it collects user
   # data, update the PrivacyInfo.xcprivacy file to describe your plugin's
   # privacy impact, and then uncomment this line. For more information,
@@ -34,15 +38,17 @@ A new Flutter FFI plugin project.
   }
   s.swift_version = '5.0'
   s.compiler_flags = [
-    '-DSQLITE_ENABLE_FTS5',
     '-DSQLITE_HAS_CODEC',
-    '-DSQLITE_TEMP_STORE=2',
+    '-DSQLITE_TEMP_STORE=3',
+    '-DSQLITE_THREADSAFE=1',
+    '-DSQLITE_ENABLE_FTS5',
+    '-DSQLITE_OMIT_LOAD_EXTENSION',
+    '-DSQLITE_OMIT_DEPRECATED',
     '-DSQLITE_EXTRA_INIT=sqlcipher_extra_init',
     '-DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown',
     # use CommonCrypto instead of OpenSSL on macOS
     '-DSQLCIPHER_CRYPTO_CC',
-    '-DSQLITE_API=FFI_PLUGIN_EXPORT',
-    '-DSQLITE_THREADSAFE=1',
+    '-DSQLITE_EXTRA_AUTOEXT=sqlite3_fts5_hans_init',
     # disable asserts, otherwise get compiler errors such as: error: implicit declaration of function 'sqlite3FirstAvailableRegister' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
     '-DNDEBUG' 
   ]
